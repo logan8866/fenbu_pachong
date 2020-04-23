@@ -95,7 +95,7 @@ class SpiderManager:
     def url_manager_processing(self, task_queue, conn_queue, start_url):
         self.url_manager.add_new_url(start_url)
         while True:
-            if self.count.value()>1000:
+            if self.count.value()>=1000:
                 print("you most have 1000 photo")
                 task_queue.put("end")
                 return  
